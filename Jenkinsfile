@@ -20,6 +20,9 @@ pipeline {
                 sh 'docker image push alvinselva/cicdproject:${BUILD_NUMBER}'
             }
         }
+        stage('Deploy on k8s') {
+           echo "Deploy on k8s"
+        }
 
     }
 }
