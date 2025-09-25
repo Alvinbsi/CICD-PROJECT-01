@@ -16,8 +16,8 @@ pipeline {
         }
     stage('Push the Docker image') {
             steps {
-                sh 'docker image push alvinselva/cicdproject:latest'
-                sh 'docker image push alvinselva/cicdproject:${BUILD_NUMBER}'
+                sh 'sudo docker image push alvinselva/cicdproject:latest'
+                sh 'sudo docker image push alvinselva/cicdproject:${BUILD_NUMBER}'
             }
         }
     stage('Hello') {
