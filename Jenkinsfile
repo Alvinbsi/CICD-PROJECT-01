@@ -14,6 +14,12 @@ pipeline {
                 sh 'docker tag cicdproject alvinselva/cicdproject:${BUILD_NUMBER}'
             }
         }
+    stage('Push the Docker image') {
+            steps {
+                sh 'docker image push alvinselva/cicdproject:latest'
+                sh 'docker image push alvinselva/cicdproject:${BUILD_NUMBER}'
+            }
+        }
 
     }
 }
