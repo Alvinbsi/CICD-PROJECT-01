@@ -20,11 +20,10 @@ pipeline {
                 sh 'sudo docker image push alvinselva/cicdproject:${BUILD_NUMBER}'
             }
         }
-    stage('Hello') {
+        stage('Deploy on Kubernetes') {
             steps {
-                echo 'Hello World'
+                sh 'sudo kubectl apply -f /var/lib/jenkins/workspace/cicd-project01/deployment.yaml'
+                sh 'sudo kubectl rollout restart deployment loadbalancer-pod'
             }
         }
-
-    }
 }
