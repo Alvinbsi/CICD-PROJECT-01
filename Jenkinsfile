@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy on Kubernetes') {
             steps {
-                sh 'sudo kubectl apply -f /var/lib/jenkins/workspace/weekendproj/pod.yaml'
+                sh 'sudo kubectl apply -f /var/lib/jenkins/workspace/cicd-project01/deployment.yaml'
                 sh 'sudo kubectl rollout restart deployment loadbalancer-pod'
             }
         }
